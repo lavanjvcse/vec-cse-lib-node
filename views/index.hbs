@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VEC CSE LIBRARY</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,500&display=swap" rel="stylesheet">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://vec-cse.github.io/init-fronend/css/style.css">
+</head>
+<body class="img">
+    
+        
+
+
+
+
+      <div class="card mb-3 fontgoogle" style="max-width: 540px;margin-left: auto;margin-right: auto; margin-top: 50px;">
+        <div class="row g-0">
+          <div class="col-md-4"  style="margin-top: auto;margin-bottom: auto;">
+            <img src="https://vec-cse.github.io/init-fronend/img/logo.jpg" class="img-fluid  rounded-circle" alt="logo" >
+          </div>
+          <div class="col-md-8">
+            <form action="/auth/login" method="post">
+            <div class="card-body">
+              <h5 class="card-title fontgoogle"><b>Welcome to VEC CSE Library </b></h5>
+              <p class="card-text fontgoogle">Come and explore our website it has lots of interesting stuff to do.</p>
+              
+              <h5><b>Purpose of visit:</b></h5>
+                <br>
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" name="videolectures" id="videoLectures">
+                <label class="form-check-label" for="videoLectures">Video Lectures</label>
+              </div>
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" name="nptel" id="nptel">
+                <label class="form-check-label" for="nptel">NPTEL</label>
+              </div>
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" name="slideshare" id="slideShare">
+                <label class="form-check-label" for="slideShare">Slide Share</label>
+              </div>
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" name="ndl" id="ndl">
+                <label class="form-check-label" for="ndl">National Digital Library(NDL)</label>
+              </div>
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" name="delnet" id="delnet">
+                <label class="form-check-label" for="delnet">DELNET</label>
+              </div>
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" name="spokentutorial" id="spokentutorial">
+                <label class="form-check-label" for="spokentutorial">Spoken Tutorial</label>
+              </div>
+              <div class="form-check form-switch fontgoogle">
+                <input class="form-check-input" type="checkbox" name="blogspot" id="blogspot">
+                <label class="form-check-label" for="blogspot">Blog spot</label>
+              </div>
+             
+              <br>
+              <h5 class="fontgoogle"><b>Login details:</b></h5>
+              <div class="form-floating mb-3">
+                
+                  
+                <input type="text" class="form-control "  name="name" id="floatingInput" placeholder="Name" required>
+               <label for="floatingInput">Name</label>
+               <br>
+   <div class="form-floating">       
+  <input type="email" class="form-control fontgoogle" name="email" id="floatingInput" placeholder="name@example.com" required>
+  <label for="floatingInput">Email address</label>
+</div>
+<br>
+<div class="form-floating">
+  <input type="password" class="form-control fontgoogle" name="password" id="floatingPassword" placeholder="Password" required>
+  <label for="floatingPassword">Password</label>
+</div>
+<br>
+<button type="submit" class="btn btn-primary fontgoogle">Sign in</button>
+<a  class="btn btn-danger fontgoogle" href="/register" >New User</a>   
+<!-- <button type="submit" class="btn btn-primary fontgoogle" style="margin-left:10px;">New user</button> -->
+<br>
+<br>
+{{#if msg}}
+      <p class="{{msg_type}}">{{msg}}</p>
+      {{/if}}
+{{!-- <a  class="btn btn-warning" href="/forgot" >Forgot password</a>             --}}
+</form>
+</div>
+          </div>
+        </div>
+      </div>
+      
+</body>
+</html>

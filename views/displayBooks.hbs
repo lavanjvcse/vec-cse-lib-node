@@ -1,0 +1,148 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Books Name</title>
+    <link rel="stylesheet" href="https://vec-cse.github.io/init-fronend/page.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo__container">
+            <img src="https://vec-cse.github.io/init-fronend/logo.png" alt="">
+        </div>
+        <span class="clg__name">
+            VELAMMAL ENGINEERING COLLEGE
+        </span>
+        <div class="liblogo__container">
+            <img src="https://vec-cse.github.io/init-fronend/lib_logo.png" alt="">
+        </div>
+    </nav>
+    <input type="checkbox" id="check">
+    <label for="check">
+        <i class="fas fa-bars" id="btn"></i>
+        <i class="fas fa-times" id="cancel"></i>
+    </label>
+    <!-- real body content -->
+    <div class="sidebar">
+        <header>Dashboard</header>
+        <a href="https://www.youtube.com/channel/UCkWyo9mRHDA9bScSj2SYaRQ/videos" target="_blank">
+            <i class="fas fa-stream"></i>
+            <span>Video Lectures</span>
+        </a>
+        <a href="https://nptel.ac.in/" target="_blank">
+            <i class="fas fa-calendar"></i>
+            <span>NPTEL</span>
+        </a>
+        <a href="/slideshare">
+            <i class="fa-solid fa-sliders"></i>
+            <span>Slide Share</span>
+        </a>
+        <a href="https://ndl.iitkgp.ac.in/" target="_blank">
+            <i class="fa-solid fa-book-open-reader"></i>
+            <span>NDL</span>
+        </a>
+        <a href="http://164.100.247.26/" target="_blank">
+            <i class="fa-brands fa-discourse"></i>
+            <span>DELNET</span>
+        </a>
+        <a href="https://spoken-tutorial.org/??/" target="_blank">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span>Spoken Tutorial</span>
+        </a>
+        <a href="/profile" target="_blank">
+            <i class="fa-solid fa-user"></i>
+            <span>Profile</span>
+        </a>
+        
+        <a href="https://veccseblog1.blogspot.com/" target="_blank">
+            <i class="fa-brands fa-blogger"></i>
+            <span>Blog Spot</span>
+        </a>
+        <!-- <a href="https://instagram.com/cse_vec?igshid=YmMyMTA2M2Y=" target="_blank">
+            <i class="fas fa-link"></i>
+            <span>Instagram</span>
+        </a> -->
+        <a href="/auth/logout" target="_blank">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Logout</span>
+        </a>
+        <!-- <a href="https://instagram.com/cse_vec?igshid=YmMyMTA2M2Y=" target="_blank">
+            <i class="fas fa-link"></i>
+            <span>Instagram</span>
+        </a> -->
+    </div>
+    <section>
+        <span>COMPUTER SCIENCE AND ENGINEERING DEPARTMENT</span><br>
+        <p>DEPARTMENT LIBRARY RESOURCES</p>
+        <a href="/home"><i class="fa-solid fa-house home"></i></a>
+        <div class="display__book">
+            <table>
+                <thead>
+                    <th>Serial No</th>
+                    <th>AccNo</th>
+                    <th>Author Name</th>
+                    <th>Book Title</th>
+                    <th>Publisher</th>
+                </thead>
+                <tbody id="tbody1"></tbody>
+            </table>
+        </div>
+        <ul id="list">
+
+        </ul>
+    </section>
+
+    <!-- Firebase section -->
+    <script type="module">
+
+        var stdNo = 0;
+            var tbody = document.getElementById('tbody1');
+            function AddItemToTable(AccNo, AuthorName, BookTitle, Publisher) {
+                let trow = document.createElement("tr");
+                let td1 = document.createElement("td");
+                let td2 = document.createElement("td");
+                let td3 = document.createElement("td");
+                let td4 = document.createElement("td");
+                let td5 = document.createElement("td");
+
+                td1.innerHTML = ++stdNo;
+                td2.innerHTML = AccNo;
+                td3.innerHTML = AuthorName;
+                td4.innerHTML = BookTitle;
+                td5.innerHTML = Publisher;
+
+                trow.appendChild(td1);
+                trow.appendChild(td2);
+                trow.appendChild(td3);
+                trow.appendChild(td4);
+                trow.appendChild(td5);
+
+                tbody.appendChild(trow);
+            };
+
+            function AddAllItemsToTable(TheBooks) {
+                stdNo = 0;
+                tbody.innerHTML = "";
+                TheBooks.forEach(element => {
+                    AddItemToTable(element.AccNo, element.AuthorName, element.BookTitle, element.Publisher);
+                });
+            };
+
+        var urlencoded = new URLSearchParams();
+
+            var requestOptions = {
+                method: 'GET'
+            };
+
+            fetch("https://department-library-default-rtdb.firebaseio.com/Books.json", requestOptions)
+                .then(response => response.json())
+                .then(result => AddAllItemsToTable(result))
+                .catch(error => console.log('error', error))
+    </script>
+    
+    
+</body>
+</html>

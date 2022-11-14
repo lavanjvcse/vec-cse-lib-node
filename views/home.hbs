@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Velammal Engineering College</title>
+    <link rel="stylesheet" href="https://vec-cse.github.io/init-fronend/page.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
+</head>
+
+<body class="homepage">
+    <div>
+        <nav class="navbar">
+            <div class="logo__container">
+                <img src="https://vec-cse.github.io/init-fronend/logo.png" alt="">
+            </div>
+            <span class="clg__name">    
+                VELAMMAL ENGINEERING COLLEGE
+            </span>
+            <div class="liblogo__container">
+                <img src="https://vec-cse.github.io/init-fronend/lib_logo.png" alt="">
+            </div>
+        </nav>
+        <input type="checkbox" id="check">
+        <label for="check">
+            <i class="fas fa-bars" id="btn"></i>
+            <i class="fas fa-times" id="cancel"></i>
+        </label> 
+    <!-- real body content -->
+        <div class="sidebar">
+            <header>Dashboard</header>
+            <a href="https://www.youtube.com/channel/UCkWyo9mRHDA9bScSj2SYaRQ/videos" target="_blank">
+                <i class="fas fa-stream"></i>
+                <span>Video Lectures</span>
+            </a>
+            <a href="https://nptel.ac.in/" target="_blank">
+                <i class="fas fa-calendar"></i>
+                <span>NPTEL</span>
+            </a>
+            <a href="/slideshare">
+                <i class="fa-solid fa-sliders"></i>
+                <span>Slide Share</span>
+            </a>
+            <a href="https://ndl.iitkgp.ac.in/" target="_blank">
+                <i class="fa-solid fa-book-open-reader"></i>
+                <span>NDL</span>
+            </a>
+            <a href="http://164.100.247.26/" target="_blank">
+                <i class="fa-brands fa-discourse"></i>
+                <span>DELNET</span>
+            </a>
+            <a href="https://spoken-tutorial.org/??/" target="_blank">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>Spoken Tutorial</span>
+            </a>
+            <a href="/profile" target="_blank">
+                <i class="fa-solid fa-user"></i>
+                <span>Profile</span>
+            </a>
+            
+            <a href="https://veccseblog1.blogspot.com/" target="_blank">
+                <i class="fa-brands fa-blogger"></i>
+                <span>Blog Spot</span>
+            </a>
+            <!-- <a href="https://instagram.com/cse_vec?igshid=YmMyMTA2M2Y=" target="_blank">
+                <i class="fas fa-link"></i>
+                <span>Instagram</span>
+            </a> -->
+            <a href="/auth/logout" target="_blank">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+        </div>
+        <div class="containers">
+            <div class="sub-banner">
+                <h3>COMPUTER SCIENCE AND ENGINEERING DEPARTMENT</h3><br>
+                <h4>DEPARTMENT LIBRARY RESOURCES</h4>
+            </div>
+            <div class="container">
+                <i class="fa-solid fa-book" id="book"></i>
+                <span class="num" data-val="1228">000</span><br>
+                <span class="text">Books</span>
+                <div id="display-books">
+                        <button onclick="window.location.href='/displayBooks'">
+                            View Books
+                        </button>
+                </div>
+            </div>
+        </div>
+        <script src="https://vec-cse.github.io/init-fronend/page.js"></script>
+    </div>
+</body>
+
+</html>
