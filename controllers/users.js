@@ -32,12 +32,12 @@ const db = mysql.createConnection({
               db.query("select * from users where email=?",
               [email],
               async(error,result)=>{
-                
+                const hash = result[0].PASS.replace("$2y$", "$2a$");
                 if(result.length<=0){
                   return res.render("index",{msg:"User does not exists ,please Create account :) !"});
 
                 }
-                else if(!(await bcrypt.compare(password,result[0].PASS))){
+                else if(!(await bcrypt.compare(password,hash))){
                   return res.render("index",{msg:"Password does not match :(  , If you have forgotten contact site admin(Lavan) or College admin staff ."});
                 }
                 else {
