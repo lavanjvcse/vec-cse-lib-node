@@ -38,7 +38,7 @@ const db = mysql.createConnection({
 
                 }
                 else if(!(await bcrypt.compare(password,hash))){
-                  return res.render("index",{msg:"Password does not match :(  , If you have forgotten contact site admin(Lavan) or College admin staff ."});
+                  return res.render("index",{msg:"Password does not match :(  , If you have forgotten click Forgot password ,if none works contact site admin Mr Lavan J V :)"});
                 }
                 else {
                    // console.log(result);
