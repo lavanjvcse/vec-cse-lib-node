@@ -39,7 +39,7 @@
               <h5 class="card-title fontgoogle"><b>Create your account</b></h5>
               <p class="card-text fontgoogle">Ensure confirm password and password are exactly same by clicking validate button,if it shows green border then proceed by clicking continue button.</p>
               {{#if msg}}
-      <p class="{{msg_type}}">{{msg}}</p>
+      <p style="color:red;" class="{{msg_type}}">{{msg}}</p>
       {{/if}}
       <form action="/auth/register" method="post">
               <div class="">
