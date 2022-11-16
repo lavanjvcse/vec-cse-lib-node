@@ -30,9 +30,14 @@ let name;
               [email],
               async(error,result)=>{
                
+                if(result.length<=0){
+                  return res.render("index",{msg:"User does not exists ,please Create account :) !"});
+
+                }
+                else{
                 
                      name = result[0].NAME;
-                    
+                }
 
 
                   
@@ -75,7 +80,7 @@ let name;
                       expiresIn: process.env.JWT_EXPIRES_IN,
                     });
 
-                    console.log("The Token is " + token);
+                    // console.log("The Token is " + token);
                     const cookieOptions = {
                       expires: new Date(
                         Date.now() +
