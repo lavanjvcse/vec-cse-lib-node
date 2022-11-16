@@ -38,3 +38,8 @@ app.use("/auth", require("./routes/auth"));
 app.listen(5000,() =>{
     console.log("Server started at 5000");
 });
+
+
+app.use((req, res, next) => {
+  res.status(404).redirect("https://404-vec-lib.lavan.net.in/")
+})
