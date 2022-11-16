@@ -14,7 +14,7 @@ const db = mysql.createConnection({
 
   exports.login = async(req, res) => {
     try {
-        const { name,email, password,videolectures,nptel,slideshare,ndl,delnet,spokentutorial,blogspot} = req.body;
+        const { email, password,videolectures,nptel,slideshare,ndl,delnet,spokentutorial,blogspot} = req.body;
         // console.log(email);
         // console.log(password);
         // console.log(videolectures);
@@ -24,10 +24,29 @@ const db = mysql.createConnection({
         // console.log(delnet);
         // console.log(spokentutorial);
         // console.log(blogspot);
+let name;
+
+        db.query("select * from users where email=?",
+              [email],
+              async(error,result)=>{
+               
+                
+                     name = result[0].NAME;
+                    
+
+
+                  
+                  }  
+            
+             
+              );
         let logintime = new Date();
         
             //console.log(hashedPassword);
             
+
+
+
 
               db.query("select * from users where email=?",
               [email],
