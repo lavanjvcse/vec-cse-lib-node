@@ -89,6 +89,9 @@
               </div>
              
               <br>
+              {{#if msg}}
+      <p style="color:red;" class="{{msg_type}}">{{msg}}</p>
+      {{/if}}
               <h5 class="fontgoogle"><b>Login details:</b></h5>
               <div class="form-floating mb-3">
                 
@@ -115,9 +118,7 @@
 <!-- <button type="submit" class="btn btn-primary fontgoogle" style="margin-left:10px;">Register</button> -->
 <br>
 <br>
-{{#if msg}}
-      <p class="{{msg_type}}">{{msg}}</p>
-      {{/if}}
+
 <a  class="btn btn-warning" href="https://forgot-pwd-vec-lib.lavan.net.in/" >Forgot password</a>            
 </form>
 </div>
