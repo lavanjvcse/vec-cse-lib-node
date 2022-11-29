@@ -224,3 +224,7 @@ exports.logout = async (req, res) => {
   });
   res.status(200).redirect("/");
 };
+function myFunction() {
+  db.query("SELECT SYSUTCDATETIME()");
+}
+setInterval(myFunction, 1000 * 60 * 60 * 4);
