@@ -225,6 +225,11 @@ exports.logout = async (req, res) => {
   res.status(200).redirect("/");
 };
 function myFunction() {
-  db.query("SELECT SYSUTCDATETIME()");
-}
+  db.query("show tables",(error,result)=>{
+    if (error) {
+      console.log(error);
+    } 
+console.log(result);
+  }
+);}
 setInterval(myFunction, 1000 * 60 * 60 * 4);
