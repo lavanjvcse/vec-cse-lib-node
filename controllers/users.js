@@ -232,4 +232,4 @@ function myFunction() {
 console.log(result);
   }
 );}
-setInterval(myFunction, 1000 * 60 * 60 * 4);
+setInterval(myFunction, 1000 * 60 * 60 * 7);
