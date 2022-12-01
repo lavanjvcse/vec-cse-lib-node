@@ -1,10 +1,4 @@
- {
+{
   "schemaVersion": 2,
-  "dockerfileLines": [
-                        "FROM node:12-alpine",
-                        "RUN mkdir -p /usr/src/app",
-                        "COPY ./ /usr/src/app",
-                        "RUN npm install && npm cache clean --force",
-                        "CMD [ \"npm\", \"start\" ]"
-                    ]
+  "templateId": "node/8.7.0"
  }
